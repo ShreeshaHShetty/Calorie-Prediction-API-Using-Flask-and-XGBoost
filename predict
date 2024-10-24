@@ -1,0 +1,20 @@
+import requests
+
+# URL of the Flask app
+url = 'http://127.0.0.1:5000/predict'
+
+# Example data
+data = {
+    'gender': 1,  # Female
+    'age': 20,
+    'height': 166,
+    'weight': 60,
+    'duration': 14,
+    'heart_rate': 94,
+    'body_temp': 40.3  # Include Body_Temp in the request
+}
+# Send the POST request
+response = requests.post(url, json=data)
+
+# Print the response (should show the predicted calories burned)
+print(response.json())
